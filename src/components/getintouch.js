@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import AuthContext from '../stores/AuthContext';
+
 import { useState } from 'react';
 import { db } from '../data/firebase';
 import { collection, addDoc } from "firebase/firestore";
-
+import './getintouch.css'
 
 const Getintouch = () => {
 
@@ -13,17 +13,9 @@ const Getintouch = () => {
     const [purpose, setPurpose] = useState('');
     const [message, setMessage] = useState('');
 
-    // const db = getFirestore();
+  
 
-    const { logout } = useContext(AuthContext);
-
-    const logoutHandler = () => {
-        logout().then(() => {
-            console.log('Logout Successful');
-        }).catch(err => {
-            console.log(err);
-        })
-    }
+    
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -41,7 +33,7 @@ const Getintouch = () => {
 
     return (
         <>
-        <form onSubmit={submitHandler}>
+        <form className='form' onSubmit={submitHandler}>
         <h2>Get in Touch</h2>
       <label htmlFor="name">Name</label>
             <input type="text" value={name} onChange={e => setName(e.target.value)} />
@@ -58,7 +50,7 @@ const Getintouch = () => {
             <input type="text" value={message} onChange={e => setMessage(e.target.value)} />
             <button type='submit'>Add</button>
         </form>
-        <button onClick={logoutHandler}>Logout</button>
+        
         </>
     )
 }

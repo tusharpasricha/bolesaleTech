@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthContext from '../stores/AuthContext';
-
+import './login.css'
 const Signup = () => {
 
     const { signup } = useContext(AuthContext);
@@ -34,28 +34,35 @@ const Signup = () => {
     }
 
     return (
-        <div className='signup'>
+        <div className='login'>
+            <div className='loginbox'>
+            <div className='boxleft'>
+
+            </div>
+            <div className='boxright'>
             {error && <div>{error}</div>}
-            <form onSubmit={submitHandler}>
+            <form className='form' onSubmit={submitHandler}>
+                <h3>Signup In</h3>
                 <div>
-                    <label>Name</label>
-                    <input type="text" name="name" />
+                    <input placeholder='Name' type="text" name="name" />
                 </div>
                 <div>
-                    <label>Email</label>
-                    <input type="email" name="email" />
+
+                    <input placeholder='Email' type="email" name="email" />
                 </div>
                 <div>
-                    <label>Password</label>
-                    <input type="password" name="password" />
+            
+                    <input placeholder='Password' type="password" name="password" />
                 </div>
                 <div>
-                    <label>Confirm Password</label>
-                    <input type="password" name="confirmPassword" />
+                    
+                    <input placeholder='Confirm Password' type="password" name="confirmPassword" />
                 </div>
                 <button type="submit">Signup</button>
             </form>
-            <p>have a account <Link to="/">Login</Link></p>
+            <p>Have a account <Link to="/">Login</Link></p>
+            </div>
+            </div>
         </div>
     );
 

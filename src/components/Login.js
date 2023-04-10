@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import AuthContext from '../stores/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import './login.css'
 
 const Login = () => {
 
@@ -30,20 +31,36 @@ const Login = () => {
 
     return (
         <div className='login'>
-            {error && <div>{error}</div>}
-            <form onSubmit={submitHandler}>
-                <div>
-                    <label>Email</label>
-                    <input type="email" name="email" />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input type="password" name="password" />
-                </div>
+            <div className='loginbox'>
+            
+            <div className='boxleft'>
 
-                <button type="submit">Login</button>
-            </form>
-            <p>Want to signup <Link to="/signup">Signup</Link></p>
+            </div>
+            <div className='boxright'>
+            {error && <div>{error}</div>}
+                <form className='form' onSubmit={submitHandler}>
+               
+                    
+                
+                    <h3>Login In</h3>
+                    <div>
+                        
+                        <input placeholder='Email' type="email" name="email" />
+                    </div>
+                    <div>
+                        
+                        <input placeholder='Password' type="password" name="password" />
+                    </div>
+
+                    <button type="submit">Login</button>
+
+                    
+                </form>
+                <p>Want to <Link to="/signup">Signup</Link></p>
+
+            </div>
+            
+            </div>
         </div>
     );
 
