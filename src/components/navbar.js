@@ -1,6 +1,6 @@
 import React , { useContext }  from 'react'
 import AuthContext from '../stores/AuthContext';
-
+import './navbar.css'
 const Navbar= () => {
 
     const { logout } = useContext(AuthContext);
@@ -13,8 +13,10 @@ const Navbar= () => {
         })
     }
   return (
-    <div>
-      <div>Bolesale Technology</div>
+    <div className='navbar'>
+      <div> BOLESALE
+
+      </div>
       <button onClick={logoutHandler}>Logout</button>
         
     </div>

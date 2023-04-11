@@ -34,7 +34,7 @@ const Login = () => {
             <div className='loginbox'>
             
             <div className='boxleft'>
-
+            
             </div>
             <div className='boxright'>
             {error && <div>{error}</div>}
