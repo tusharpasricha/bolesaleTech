@@ -26,7 +26,8 @@
 
 }
 .boxleft{
-    
+    background: url(../img/login.jpg);
+    background-size: cover;
     width: 50%;
 }
 input{
